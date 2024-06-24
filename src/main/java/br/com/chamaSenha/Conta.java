@@ -24,7 +24,7 @@ public abstract class Conta implements AcoesBancarias {
     @Override
     public void sacar(double valor) {
         this.saldo -= valor;
-        System.out.println("Saque de R$ " + valor + " realizado com sucesso!");
+        System.out.println(cliente.getNome()+" realizou um saque de R$ " + valor + " com sucesso!");
         System.out.println("Saldo atual: " + this.saldo);
         System.out.println("--".repeat(20));
 
@@ -34,7 +34,7 @@ public abstract class Conta implements AcoesBancarias {
     @Override
     public void depositar(double valor) {
         this.saldo += valor;
-        System.out.println("Deposito de R$ " + valor + " realizado com sucesso!");
+        System.out.println(cliente.getNome()+" realizou um deposito de R$ " + valor + " com sucesso!");
         System.out.println("Saldo atual: " + this.saldo);
         System.out.println("--".repeat(20));
 
@@ -45,7 +45,7 @@ public abstract class Conta implements AcoesBancarias {
     public void transferir(Conta conta, double valor) {
         this.sacar(valor);
         conta.depositar(valor);
-        System.out.println(cliente+"Transferencia de R$ " + valor + " realizado com sucesso!");
+        System.out.println(cliente.getNome()+"Transfereriu um valor de R$ " + valor + " com sucesso!");
         System.out.println("Saldo atual: " + this.saldo);
         System.out.println("--".repeat(20));
 
